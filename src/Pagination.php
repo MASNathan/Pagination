@@ -152,7 +152,7 @@ class Pagination
      */
     public function getPages()
     {
-        if (!$this->paginationString && !$this->paginationArray) {
+        if ($this->paginationString === null && $this->paginationArray === null) {
             $this->generate();
         }
 
