@@ -97,7 +97,7 @@ class Pagination extends BasePagination
             $itemsString .= sprintf($this->itemHtml, $pageUrl, $this->nextLabel);
         }
 
-        return sprintf($this->wrapper, $itemsString);
+        return sprintf($this->wrapperHtml, $itemsString);
     }
 
     /**
@@ -122,7 +122,7 @@ class Pagination extends BasePagination
             throw new \InvalidArgumentException("Invalid HTML wrapper string, must be a valid format string for sprintf() with 1 argument");
         }
 
-        $this->wrapper = $htmlString;
+        $this->wrapperHtml = $htmlString;
     }
 
     /**
@@ -172,7 +172,7 @@ class Pagination extends BasePagination
 
     /**
      * Sets the next page label text
-     * @param string $htmlString Previous page text
+     * @param string $string Previous page text
      * @return void
      */
     public function setPreviousLabel($string)
@@ -182,7 +182,7 @@ class Pagination extends BasePagination
 
     /**
      * Sets the previous page label text
-     * @param string $htmlString Next page text
+     * @param string $string Next page text
      * @return void
      */
     public function setNextLabel($string)
@@ -192,7 +192,7 @@ class Pagination extends BasePagination
 
     /**
      * Sets the page url template
-     * @param string $htmlString Page url template
+     * @param string $pageUrl Page url template
      * @return void
      */
     public function setPageUrl($pageUrl)
